@@ -1,0 +1,54 @@
+h2 {
+  float: left;
+  font-size: 1.5em;
+  font-weight: 800;
+  line-height: 1em;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.75rem;
+  margin-top: 0;
+}
+
+a {
+  border-bottom-color: var(--color-link);
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  color: var(--color-link);
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-property: border-bottom-color, color;
+  transition-timing-function: ease-in-out;
+
+  @media (hover: hover) {
+    &:active,
+    &:focus,
+    &:hover {
+      border-bottom-color: var(--color-link-hover);
+      color: var(--color-link-hover);
+      outline: 0;
+      text-decoration: none;
+    }
+  }
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+.text {
+  &-success {
+    color: var(--color-success) !important;
+  }
+
+  &-warning {
+    color: var(--color-warning) !important;
+  }
+
+  &-danger {
+    color: var(--color-danger) !important;
+  }
+}

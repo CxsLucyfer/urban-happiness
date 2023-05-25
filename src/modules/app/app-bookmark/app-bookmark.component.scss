@@ -1,0 +1,130 @@
+@import '../../../styles/modules/all';
+
+app-bookmark {
+  --color-badge-bg: #{$color-text2-default};
+  --color-badge-text: #{$color-text1-default};
+
+  display: block;
+
+  @include theme-dark {
+    --color-badge-bg: #{$color-bg3-dark};
+    --color-badge-text: #{$color-text2-dark};
+  }
+
+  &.view .view-content {
+    display: flex;
+    flex-flow: column;
+  }
+
+  #bookmarkForm {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+
+  button.btn.btn-default.btn-delete-bookmark {
+    background-color: var(--color-danger);
+
+    @media (hover: hover) {
+      &:not([disabled]):active,
+      &:not([disabled]):hover {
+        color: var(--color-danger);
+      }
+    }
+  }
+
+  .buttons,
+  .form-group,
+  .header-panel {
+    flex: none;
+  }
+
+  input[type='text'] {
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  .mobile-landscape {
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .tags-container {
+    height: calc(100% - 3.5rem);
+    margin-bottom: 0;
+    margin-top: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .badge {
+      align-items: center;
+      background-color: var(--color-badge-bg);
+      border: 0;
+      color: var(--color-badge-text);
+      display: inline-flex;
+      font-size: 0.85rem;
+      font-weight: normal;
+      line-height: 1.2rem;
+      margin: 0 0.5rem 0.5rem 0;
+      max-width: 99%;
+
+      i {
+        color: var(--color-badge-text);
+        opacity: 0.5;
+        transition: opacity ease-in-out 0.2s;
+      }
+
+      span {
+        @include text-overflow-ellipsis;
+
+        margin-right: 0.3rem;
+
+        @media (hover: hover) {
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
+
+      @media (hover: hover) {
+        &:active,
+        &:hover {
+          i {
+            opacity: 1;
+          }
+        }
+
+        &:focus span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .tags-input-container {
+    border-radius: $border-radius-input;
+    margin-bottom: 0;
+    overflow: hidden;
+
+    input {
+      background: transparent;
+      border-width: 0;
+      line-height: 2.6rem;
+      position: relative;
+      text-transform: lowercase;
+      z-index: 50;
+    }
+
+    .lookahead-container {
+      .lookahead,
+      .measure {
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  .textarea-container {
+    display: flex;
+    flex: 1 0 10rem;
+  }
+}

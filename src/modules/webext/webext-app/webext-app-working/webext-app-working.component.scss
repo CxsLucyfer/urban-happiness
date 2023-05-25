@@ -1,0 +1,43 @@
+@import '../../../../styles/modules/all';
+
+app-working {
+  display: block;
+
+  h3 {
+    @include ellipsis;
+
+    color: var(--color-spinner);
+    font-size: 1.1rem;
+    margin: 1rem 0 0;
+  }
+
+  .buttons {
+    align-items: flex-end;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    position: absolute;
+    width: 50vw;
+
+    .button {
+      position: absolute;
+    }
+  }
+
+  .spinner-border {
+    height: 20vw;
+    width: 20vw;
+  }
+
+  .overlay {
+    @include animation-fade-in();
+
+    flex-direction: column;
+
+    &.fullsize {
+      height: 37rem;
+      position: unset;
+      width: 23rem;
+    }
+  }
+}
